@@ -1,0 +1,30 @@
+public class Fibonacci
+{
+public static void main(String[] args)
+{
+int numberOne = 0;
+int numberTwo = 1;
+int numberSum = 0;
+int[] fibonacci = new int[20];
+fibonacci[0] = numberOne;
+fibonacci[1] = numberTwo;
+
+    Scanner in = new Scanner(System.in);
+    System.out.println("Give me the position on the Fibonacci sequence that you wish to find out which number contains ");
+    int pos = in.nextInt();
+
+    for (int i = 2; i <= pos; i++)
+    {
+        numberSum = numberOne + numberTwo;
+        numberOne = numberTwo;
+        numberTwo = numberSum;
+        if( i < fibonacci.length)
+        {
+            fibonacci[i] = numberSum;
+        }
+    }
+
+    System.out.println("The value that corresponds to the position " + pos +"th, is " + numberSum);
+    System.out.println();
+    System.out.println(Arrays.toString(fibonacci));
+}
